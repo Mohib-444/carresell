@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Slideshow</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial; margin: 0; background: #000; }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .slides {
+      display: none;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .dot-container {
+      text-align: center;
+      padding: 10px;
+      background: #222;
+    }
+
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+  <div class="slides fade"><img src="swift1.jpg" alt="Image 1"></div>
+  <div class="slides fade"><img src="swift2.jpg" alt="Image 2"></div>
+  <div class="slides fade"><img src="swift3.jpg" alt="Image 3"></div>
+  <div class="slides fade"><img src="swift4.jpg" alt="Image 4"></div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+function plusSlides(n) {
+  slideIndex += n - 1;
+  showSlides();
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maruti Suzuki Swift 2020</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eaeaea;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h1 {
+      color: #cc0000;
+    }
+
+    ul {
+      margin-top: 15px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #cc0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background-color: #a50000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Maruti Suzuki Swift 2020</h1>
+  
+
+  <p><strong>Overview:</strong> The 2020 Swift is a sporty, fuel-efficient hatchback loved for its smooth performance, stylish design, and practical features.</p>
+
+  <h2>Key Features:</h2>
+  <ul>
+    <li>1.2L K-Series Petrol Engine</li>
+    <li>5-Speed Manual / AMT Gearbox Options</li>
+    <li>BS6 Compliant, Excellent Fuel Efficiency (~21-23 km/l)</li>
+    <li>SmartPlay Touchscreen Infotainment System</li>
+    <li>Dual Airbags, ABS with EBD</li>
+    <li>LED DRLs and Projector Headlamps</li>
+    <li>Comfortable Seating and Spacious Boot</li>
+  </ul>
+
+  <a href="https://www.marutisuzuki.com/swift" class="button" target="_blank">Explore More</a>
+</div>
+
+</body>
+</html>

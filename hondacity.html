@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Slideshow</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial; margin: 0; background: #000; }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .slides {
+      display: none;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .dot-container {
+      text-align: center;
+      padding: 10px;
+      background: #222;
+    }
+
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+  <div class="slides fade"><img src="hondacity1.jpg" alt="Image 1"></div>
+  <div class="slides fade"><img src="hondacity2.jpg" alt="Image 2"></div>
+  <div class="slides fade"><img src="hondacity3.jpg" alt="Image 3"></div>
+  <div class="slides fade"><img src="hondacity4.jpg" alt="Image 4"></div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+function plusSlides(n) {
+  slideIndex += n - 1;
+  showSlides();
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Honda City 2018</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    h1 {
+      color: #333;
+    }
+    ul {
+      line-height: 1.6;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #ff3c3c;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .button:hover {
+      background-color: #e62e2e;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Honda City 2018</h1>
+
+  
+  <p><strong>Overview:</strong> The 2018 Honda City is a stylish and reliable sedan known for its comfort, fuel efficiency, and sleek design.</p>
+  
+  <h2>Key Features:</h2>
+  <ul>
+    <li>1.5L i-VTEC Petrol / i-DTEC Diesel Engine</li>
+    <li>CVT Automatic or 6-Speed Manual Transmission</li>
+    <li>Touchscreen Infotainment with Navigation</li>
+    <li>Rearview Camera and Parking Sensors</li>
+    <li>ABS with EBD and Dual Airbags</li>
+    <li>Premium Interior with Leather Upholstery (on higher variants)</li>
+    <li>Mileage: ~17-25 km/l (depending on fuel type and variant)</li>
+  </ul>
+
+  <a href="https://www.hondacarindia.com/honda-city" class="button" target="_blank">Explore More</a>
+</div>
+
+</body>
+</html>
